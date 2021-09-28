@@ -1,11 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include partials/_header.ejs %>
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/images/bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">नमस्ते! दोस्त 🙏</h1>
+            <p class="lead">Looking for developer <br> You are at the right place to start🚶</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+                <!--<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">My Service</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 flex-align-center">
+        <div class="col d-flex align-items-start">
+            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                <img src="/images/icons/world-wide-web.png" alt="">
+            </div>
+
+            <div>
+                <h2>Website Building</h2>
+                <p>An elegant website in just 24 hours for your business to get started. Templates of your choice & your domain!</p>
+                <a href="#" class="btn btn-outline-secondary">Get Started</a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h2>Hybrid Mobile Application</h2>
+                <p>Single cost duel platform. Get your app ready for Android & iOS. Long term maintenance.</p>
+                <a href="#" class="btn btn-outline-secondary">Get Started</a>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/_footer.ejs %>
