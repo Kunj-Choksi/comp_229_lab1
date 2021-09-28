@@ -190,6 +190,10 @@ a {
     color: #00B7FF;
 }
 
+.max-width {
+    max-width: 100% !important;
+}
+
 .btn {
     padding-top: 5px;
 }
@@ -219,10 +223,24 @@ a {
         width: 40%;
 
         &:hover {
-            box-shadow: 0px 30px 80px #e1e2e3;
+            box-shadow: 0 30px 80px #e1e2e3;
             transition: .4s all;
             cursor: pointer;
         }
     }
 }
+.project-section {
+    max-width: 100%;
+    height: 400px;
+    background: url("../images/projects-banner.jpg") no-repeat center center;
+    background-size: 1400px auto;
+    .text-muted {
+        color: white !important;
+    }
+}
 
+.project-list {
+    .project-item {
+        width: 45%;
+    }
+}
