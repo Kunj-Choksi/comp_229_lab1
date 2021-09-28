@@ -17,7 +17,7 @@ i {
 
 /*----------bootstrap-navbar-css------------*/
 .navbar-logo {
-    padding: 15px;
+    padding: 0 15px;
     color: #fff;
 }
 
@@ -136,7 +136,6 @@ i {
         -ms-flex-flow: row nowrap;
         flex-flow: row nowrap;
         -ms-flex-pack: start;
-        justify-content: space-around;
     }
     .navbar-expand-custom .navbar-nav {
         -ms-flex-direction: row;
@@ -198,6 +197,7 @@ a {
 .btn-primary {
     background-color: $primary;
     border-color: $primary;
+
     &:hover {
         background-color: $primary-shade;
         border-color: $primary-shade;
@@ -209,3 +209,20 @@ a {
     justify-content: space-around;
     align-items: center;
 }
+
+.service-list {
+    .service-item {
+        height: 250px;
+        padding: 30px;
+        background-color: #f8f9fa;
+        border-radius: 20px;
+        width: 40%;
+
+        &:hover {
+            box-shadow: 0px 30px 80px #e1e2e3;
+            transition: .4s all;
+            cursor: pointer;
+        }
+    }
+}
+
