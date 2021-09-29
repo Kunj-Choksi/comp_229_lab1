@@ -12,34 +12,35 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="/">
-            <img src="/images/logo1.png" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars text-white"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector">
-                    <div class="left"></div>
-                    <div class="right"></div>
+    <div class="navigation-wrap bg-primary start-header start-style">
+        <div class="hero-anime">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/"><img src="/images/logo1.png" alt=""></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse navigation-bar" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'home' ? 'active' : '' %>">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'services' ? 'active' : '' %>">
+                            <a class="nav-link" href="/services">Services</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'projects' ? 'active' : '' %>">
+                            <a class="nav-link" href="/projects">Projects</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'about-me' ? 'active' : '' %>">
+                            <a class="nav-link" href="/about-me">About Me</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'contact-me' ? 'active' : '' %>">
+                            <a class="nav-link" href="/contact-me">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/services"><i class="fab fa-buffer"></i>Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/projects"><i class="fas fa-project-diagram"></i>Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-user-ninja"></i>About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Contact Me</a>
-                </li>
-            </ul>
+
+            </nav>
         </div>
-    </nav>
+    </div>
