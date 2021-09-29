@@ -1,6 +1,14 @@
+/**
+ * File name: script.js
+ * Name: Kunj Alkeshbhai Choksi
+ * StudentId: 301200718
+ * Date: 29 September, 2021
+ */
+// auto invoked function
 (function ($) {
     "use strict";
 
+    // adding style for on scrolling
     $(function () {
         var header = $(".start-style");
         $(window).scroll(function () {
@@ -15,7 +23,6 @@
     });
 
     //Menu On Hover
-
     $('body').on('mouseenter mouseleave', '.nav-item', function (e) {
         if ($(window).width() > 750) {
             var _d = $(e.target).closest('.nav-item');

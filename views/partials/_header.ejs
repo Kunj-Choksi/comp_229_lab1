@@ -1,3 +1,9 @@
+<!--
+   File name: _header.ejs
+   Name: Kunj Alkeshbhai Choksi
+   StudentId: 301200718
+   Date: 29 September, 2021
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,21 +12,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunj Choksi</title>
 
+    <!-- Bootstrap css -->
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
 
+    <!-- Custom css -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+<!-- Navigation Bar -->
     <div class="navigation-wrap bg-primary start-header start-style">
         <div class="hero-anime">
             <nav class="navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
                 <a class="navbar-brand" href="/"><img src="/images/logo1.png" alt=""></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- Navigation List -->
                 <div class="collapse navbar-collapse navigation-bar" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto py-4 py-md-0">
                         <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 <%= title == 'home' ? 'active' : '' %>">

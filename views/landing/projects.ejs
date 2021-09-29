@@ -1,10 +1,21 @@
+<!--
+   File name: projects.ejs
+   Name: Kunj Alkeshbhai Choksi
+   StudentId: 301200718
+   Date: 29 September, 2021
+-->
+<!-- Page Header -->
 <% include ../partials/_header.ejs %>
+<!-- Project page background colour -->
 <style>
     body {
         background: #f8f9fa;
     }
 </style>
-<section class="py-5 text-center container project-section max-width">
+
+<!-- Project Page Header -->
+
+<section class="py-5 text-center container project-section max-width" style="padding: 220px !important">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">Projects</h1>
@@ -12,10 +23,13 @@
         </div>
     </div>
 </section>
+
+<!-- Project List Row 1 -->
 <div class="d-md-flex flex-md-equal w-100 my-md-5 ps-md-3 flex-align-center project-list">
+    <!-- Project 1 -->
     <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden project-item">
         <div class="my-3 py-3">
-            <h2 class="display-5">Scanner App</h2>
+            <h2 class="display-5">Scanner App <span style="font-size: 20px;font-weight: 600;"> (Personal)</span></h2>
             <p class="lead">
                 Capture<i style="margin: 0 10px" class="fas fa-arrow-circle-right"></i> Scan<i style="margin: 0 10px" class="fas fa-arrow-circle-right"></i> Crop<i style="margin: 0 10px" class="fas fa-arrow-circle-right"></i> Share PDF &nbsp;&nbsp; 🍻
             </p>
@@ -24,9 +38,10 @@
             <div class="bg-dark shadow-sm project-img img1"></div>
         </div>
     </div>
+    <!-- Project 2 -->
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden project-item">
         <div class="my-3 p-3">
-            <h2 class="display-5">Recipe Website</h2>
+            <h2 class="display-5">Recipe Website <span style="font-size: 20px;font-weight: 600;">(Personal)</span></h2>
             <p class="lead">Manage your recipe at one dashboard.</p>
         </div>
         <div class="bg-dark shadow-sm mx-auto" style="height: 300px; border-radius: 21px 21px 0 0;">
@@ -34,10 +49,12 @@
         </div>
     </div>
 </div>
+<!-- Project List Row 2 -->
 <div class="d-md-flex flex-md-equal w-100 my-md-5 ps-md-3 flex-align-center project-list">
+    <!-- Project 3 -->
     <div class="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden project-item">
         <div class="my-3 py-3">
-            <h2 class="display-5">Esista</h2>
+            <h2 class="display-5">Esista <span style="font-size: 20px;font-weight: 600;">(Fullstack Developer)</span></h2>
             <p class="lead">A Web Portal for Realtors. Manage your real estate deals with hassle free service.</p>
         </div>
         <div class="bg-dark shadow-sm mx-auto" style="height: 300px; border-radius: 21px 21px 0 0;">
@@ -45,4 +62,5 @@
         </div>
     </div>
 </div>
+<!-- Page Footer -->
 <% include ../partials/_footer.ejs %>
