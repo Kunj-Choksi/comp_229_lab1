@@ -3,11 +3,14 @@
  * Name: Kunj Alkeshbhai Choksi
  * StudentId: 301200718
  * Date: 29 September, 2021
-*/
+ */
 
 /* npm module import */
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+const {route} = require("express/lib/router");
+let router = express.Router();
+
+let userController = require('../controllers/user.controller');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -28,9 +31,19 @@ router.get('/projects', function (req, res, next) {
 router.get('/about-me', function (req, res, next) {
     res.render('landing/about-me', {title: "about-me"});
 });
+
 /* GET contact me page */
 router.get('/contact-me', function (req, res, next) {
     res.render('landing/contact-me', {title: "contact-me"});
 });
+
+/* GET route for displaying the Login Page*/
+router.get("/login", userController.displayLoginPage);
+
+/* POST route for processing the Login Page*/
+router.post("/login", userController.processLoginPage);
+
+/* POST route for processing logout */
+// router.get("/logout",);
 
 module.exports = router;
