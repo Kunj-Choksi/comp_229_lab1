@@ -5,12 +5,14 @@
  * Date: 29 September, 2021
  */
 // imports for npm modules
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+
+let indexRouter = require('./routes/index');
+let contactsRouter = require("./routes/contacts.router");
 
 // express app variable
 var app = express();
@@ -19,7 +21,7 @@ var app = express();
 let session = require("express-session");
 let passport = require("passport");
 let passportLocal = require("passport-local");
-let localStrategy = passportLocal.Strategy;
+let LocalStrategy = passportLocal.Strategy;
 let flash = require("connect-flash");
 
 // view engine setup
@@ -34,7 +36,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
+// routes
 app.use('/', indexRouter);
+app.use("/contacts", contactsRouter);
 
 //setup express session
 app.use(session({
@@ -71,9 +75,40 @@ app.use(passport.session());
 let userModel = require("./models/users.model");
 let User = userModel.User;
 
+// implement a User authentication Strategy
+//passport.use(User.createStrategy());
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+        console.log(username)
+        console.log(password)
+        User.findOne({username: username}, function (err, user) {
+            if (err) {
+                return done(err);
+            }
+            console.log("user@@@@@@@@@@@@@@@");
+            console.log(user);
+            if (!user) {
+                return done(null, false, {message: 'Incorrect username.'});
+            }
+            if (user.password === password) {
+                return done(null, false, {message: 'Incorrect password.'});
+            }
+            return done(null, user);
+        });
+    }
+));
+
+
 // serialize and deserialize the User info
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(function (user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+        done(err, user);
+    });
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

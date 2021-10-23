@@ -30,13 +30,7 @@ module.exports.processLoginPage = (req, res, next) => {
             // req.flash("loginMessage", "Authentication Error")
             return res.redirect("/login");
         }
-        req.login(user, (error) => {
-            // server error
-            if (error) {
-                return next(error);
-            }
-            return res.redirect("/contact-list")
-        })
+        return res.redirect("/contacts");
 
-    })(req, res, next)
+    })(req, res, next);
 }

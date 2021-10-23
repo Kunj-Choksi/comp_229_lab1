@@ -484,3 +484,15 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 body.dark .logo img {
     filter: brightness(100%);
 }
+
+.contact-list {
+    display: flex;
+    justify-content: space-between;
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        span {
+            margin-right: 10px;
+        }
+    }
+}

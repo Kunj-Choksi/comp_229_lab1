@@ -475,4 +475,16 @@ body.dark .logo img {
   filter: brightness(100%);
 }
 
+.contact-list {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-list .actions {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-list .actions span {
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */

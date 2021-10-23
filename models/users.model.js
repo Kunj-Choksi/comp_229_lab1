@@ -1,37 +1,54 @@
+/**
+ * File name: index.js
+ * Name: Kunj Alkeshbhai Choksi
+ * StudentId: 301200718
+ * Date: 21 October, 2021
+ */
 // require modules for the User Model
-let mongoose = require("mongoose");
-let passportLocalMongoose = require("passport-local-mongoose");
+let mongoose = require('mongoose');
+let passportLocalMongoose = require('passport-local-mongoose');
 
-let User = mongoose.Schema(
+let User = mongoose.Schema
+(
     {
         username: {
             type: String,
-            default: "",
+            default: '',
             trim: true,
-            required: "username is required"
+            required: 'username is required'
         },
+        /*
         password: {
             type: String,
-            default: "",
+            default: '';
             trim: true,
-            required: "password is required"
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now,
-        },
-        updatedAt: {
-            type: Date,
-            default: Date.now,
+            required: 'password is required'
         }
-    }, {
-        collation: "users"
+        */
+        email: {
+            type: String,
+            default: '',
+            trim: true,
+            required: 'email address is required'
+        },
+        created: {
+            type: Date,
+            default: Date.now
+        },
+        update: {
+            type: Date,
+            default: Date.now
+        }
+    },
+    {
+        collection: "users"
     }
-)
+);
 
-// configure model for User Model
-let options = ({missingPasswordError: "Missing password"})
+// configure options for User Model
+
+let options = ({missingPasswordError: 'Wrong / Missing Password'});
 
 User.plugin(passportLocalMongoose, options);
 
-module.exports.User = mongoose.model("User", User);
+module.exports.User = mongoose.model('User', User);
