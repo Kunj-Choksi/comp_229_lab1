@@ -22,6 +22,10 @@
     "url": "https://github.com/Kunj-Choksi/comp_229_lab1/issues"
   },
   "homepage": "https://github.com/Kunj-Choksi/comp_229_lab1#readme",
+  "engines": {
+    "node": "^16.11.1",
+    "npm": "8.1.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.1",

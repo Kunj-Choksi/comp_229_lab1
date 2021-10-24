@@ -21,6 +21,9 @@ module.exports = {
             if (err) {
                 return console.log(err)
             } else {
+                contactList.sort((a, b) => {
+                    return a.name > b.name;
+                })
                 res.render("main/contacts", {
                     title: "Contacts",
                     Contacts: contactList,
