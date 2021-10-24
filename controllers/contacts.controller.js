@@ -63,10 +63,7 @@ module.exports = {
             if (err) {
                 return console.error(err);
             } else {
-                res.redirect("/contacts", {
-                    title: "List",
-                    showLogin: false
-                })
+                res.redirect("/contacts")
             }
         })
     },
@@ -80,10 +77,7 @@ module.exports = {
                 res.end(err);
             } else {
                 // refresh the contacts list
-                res.redirect('/contacts', {
-                    title: "List",
-                    showLogin: false
-                });
+                res.redirect('/contacts');
             }
         })
     }
