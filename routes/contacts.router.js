@@ -14,4 +14,10 @@ let contactsController = require("../controllers/contacts.controller");
 /* GET for contacts page */
 router.get("/", contactsController.getContacts);
 
+router.get("/edit/:id", contactsController.displayEditContactPage);
+
+router.post("/edit/:id", contactsController.processEditContactPage);
+
+router.get("/delete/:id", contactsController.deleteContactPage);
+
 module.exports = router;

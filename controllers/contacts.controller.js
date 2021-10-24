@@ -15,6 +15,7 @@ let contacts = require("../models/contacts.models");
 let Contacts = contacts.Contacts; // alias
 
 module.exports = {
+    // GET contact list API
     getContacts: (req, res, next) => {
         Contacts.find((err, contactList) => {
             if (err) {
@@ -23,7 +24,63 @@ module.exports = {
                 res.render("main/contacts", {
                     title: "Contacts",
                     Contacts: contactList,
+                    showLogin: false
                 })
+            }
+        })
+    },
+    // GET for edit contact page
+    displayEditContactPage: (req, res, next) => {
+        let id = req.params.id;
+        Contacts.findById(id, (err, contactToEdit) => {
+            if (err) {
+                console.error(err);
+                res.end(err);
+            } else {
+                return res.render("main/edit-contact", {
+                    title: "Edit Contacts",
+                    Contact: contactToEdit,
+                    showLogin: false
+                })
+            }
+        })
+    },
+    // POST process edit contact page
+    processEditContactPage: (req, res, next) => {
+        let id = req.params.id;
+
+        let contactToBeUpdated = {
+            "_id": id,
+            "name": req.body.name,
+            "number": req.body.number,
+            "email": req.body.email
+        }
+
+        Contacts.updateOne({_id: id}, contactToBeUpdated, (err, contactToEdit) => {
+            if (err) {
+                return console.error(err);
+            } else {
+                res.redirect("/contacts", {
+                    title: "List",
+                    showLogin: false
+                })
+            }
+        })
+    },
+    // GET for delete contact by ID
+    deleteContactPage: (req, res, next) => {
+        let id = req.params.id;
+
+        Contacts.remove({_id: id}, (err) => {
+            if (err) {
+                console.log(err);
+                res.end(err);
+            } else {
+                // refresh the contacts list
+                res.redirect('/contacts', {
+                    title: "List",
+                    showLogin: false
+                });
             }
         })
     }

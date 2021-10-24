@@ -7,25 +7,26 @@
 <!-- Page Header -->
 <% include ../partials/_header.ejs %>
 
+<!--Contact List View-->
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row justify-content-center g-5 py-5">
         <div class="col-md-6 text-center">
-            <h2 class="heading-section">Business Contacts</h2>
+            <h2 class="heading-section">My Business Contacts</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
             <div class="list-group">
-                <% for(let count = 0; count < Contacts.length; count++) { %>
-                    <a href="#" class="list-group-item list-group-item-action contact-list">
+                <% for(let index = 0; index < Contacts.length; index++) { %>
+                    <div href="#" class="list-group-item list-group-item-action contact-list">
                         <div class="contact-name">
-                            <%= Contacts[count].name %>
+                            <%= Contacts[index].name %>
                         </div>
                         <div class="actions">
-                            <span class="link-info">Edit</span>
-                            <span class="link-danger">Delete</span>
+                            <a href="/contacts/edit/<%= Contacts[index].id %>" class="link-info">Edit</a>
+                            <a href="/contacts/delete/<%= Contacts[index].id %>" class="link-danger">Delete</a>
                         </div>
-                    </a>
+                    </div>
                 <% } %>
             </div>
         </div>

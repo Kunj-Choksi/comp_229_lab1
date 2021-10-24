@@ -483,7 +483,7 @@ body.dark .logo img {
   display: flex;
   justify-content: space-between;
 }
-.contact-list .actions span {
+.contact-list .actions a {
   margin-right: 10px;
 }
 
